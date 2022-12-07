@@ -27,6 +27,13 @@
                         $_SESSION['logado'] = $nome;
                         $_SESSION['acesso'] = $linha['nivelAcesso'];
                         $_SESSION['idusuario'] = $linha['idusuario'];
+                        
+                    }else{
+
+                        echo '
+                        <a href="index.php">
+                        <h1 class="w3-button w3-teal">Usuário Bloqueado!<br> Contate seu administrador</h1>
+                        </a> ';
                     }
                     
                     
@@ -35,7 +42,7 @@
                 {
                     echo '
                     <a href="index.php">
-                    <h1 class="w3-button w3-teal">Login Inválido! </h1>
+                    <h1 class="w3-button w3-teal">Usuário ou senha Inválidos</h1>
                     </a> ';
                 }
                 
