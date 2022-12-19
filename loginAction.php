@@ -8,7 +8,7 @@
             $nome = $_POST['txtNome'];
             $senha = $_POST['txtSenha'];
                 require_once ('conexaoBD.php');
-            $sql = "SELECT * FROM usuario WHERE nomeUsuario = '".$nome."';";
+            $sql = "SELECT * FROM usuario WHERE usuario = '".$nome."';";
             $resultado = $conexao->query($sql);
             //echo $sql;
             $linha = mysqli_fetch_array($resultado);
