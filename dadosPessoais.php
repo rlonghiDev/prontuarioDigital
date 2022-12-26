@@ -7,20 +7,19 @@
 
 <title>Dados pessoais</title>
 </head>
+
 <?php require_once ('infoUsuario.php'); ?>
-<h4>Preencha ou verifique os dados abaixo</h4><br>
 
-<div class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-third">
 
-    
-    
-    <form class="w3-container " action="updateUsuarioAction.php" method="post">
+<div class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-twothird">
+
+    <form class="w3-container" action="updateUsuarioAction.php" method="post">
         <div class="w3-section">
             <label style="font-weight: bold;">Nome</label>
-            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Digite o nome" name="txtNomeUsuario" <?php echo 'required value="'.$valorPrevioNomeUsuario.'"'; ?> >
+            <input class="w3-input w3-border w3-border-red w3-margin-bottom w3-border-color:blue" type="text" placeholder="Digite o nome" name="txtNomeUsuario" <?php echo 'required value="'.$valorPrevioNomeUsuario.'"'; ?> >
             
             <label style="font-weight: bold;">Logradouro</label>
-            <input class="w3-input w3-border" type="text" placeholder="Informe o nome do Logradouro" name="txtLogradouro" <?php echo 'required value="'.$valorPrevioLogradouro.'"'; ?> >
+            <input class="w3-input w3-border w3-border-blue" type="text" placeholder="Informe o nome do Logradouro" name="txtLogradouro" <?php echo 'required value="'.$valorPrevioLogradouro.'"'; ?> >
 
             <label style="font-weight: bold;">Número</label>
             <input class="w3-input w3-border" type="text" placeholder="Informe o número" name="txtNumero" <?php echo 'required value="'.$valorPrevioNumero.'"'; ?> >
@@ -38,18 +37,15 @@
             <input class="w3-input w3-border" type="text" placeholder="Informe o País" name="txtPais" <?php echo 'required value="'.$valorPrevioPais.'"'; ?> >
 
             <label style="font-weight: bold;">e-mail</label>
-            <input class="w3-input w3-border" type="text" placeholder="Informe o email" name="txtEmail" required>
+            <input class="w3-input w3-border" type="text" placeholder="Informe o email" name="txtEmail" required <?php echo 'required value="'.$valorPrevioEmail.'"'; ?>>
 
             <label style="font-weight: bold;">Telefone</label>
-            <input class="w3-input w3-border" type="text" placeholder="Informe o Número de Telefone" name="txtTelefone" required>
+            <input class="w3-input w3-border" type="tel" placeholder="Informe o Número de Telefone" name="txtTelefone" required <?php echo 'required value="'.$valorPrevioTelefone.'"'; ?>>
            
             <button class="w3-button w3-block w3-teal w3-section w3-padding" type="submit">Atualizar</button>
         </div>
     </form>
-
     <br>
-
-    <?php echo $arrayUsuario['nomeUsuario'] ?><br>
-
+</div>
 <br>
 <?php require_once ('rodape.php'); /*Faz a chamada da estrutura padronizada de Rodapé*/?>

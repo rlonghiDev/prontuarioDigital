@@ -45,81 +45,84 @@
 
 
 
+
+
     //Nome usuário
-    if($arrayUsuario['nomeUsuario'] != null)
-    {
+    if($arrayUsuario['nomeUsuario'] != null){
         $valorPrevioNomeUsuario = $arrayUsuario['nomeUsuario'];
     }
-    else
-    {
+    else{
         $valorPrevioNomeUsuario = '';
     }
     
     //Logradouro
-    if($arrayEndereco['logradouro'] != null)
-    {
-        $valorPrevioLogradouro = 'value ="'.$arrayEndereco['logradouro'].'"';
+    if($arrayEndereco['logradouro'] != null){
+        $valorPrevioLogradouro = $arrayEndereco['logradouro'];
     }
-    else
-    {
-        $valorPrevioLogradouro = 'value =""';
+    else{
+        $valorPrevioLogradouro = '""';
     }
 
     //Número
-    if($arrayEndereco['numero'] != null)
-    {
-        $valorPrevioNumero = 'value ="'.$arrayEndereco['numero'].'"';
+    if($arrayEndereco['numero'] != null){
+        $valorPrevioNumero = $arrayEndereco['numero'];
     }
-    else
-    {
-        $valorPrevioNumero = 'value =""';
+    else{
+        $valorPrevioNumero = '""';
     }
    
     //CEP
-    if($arrayEndereco['CEP'] != null)
-    {
-        $valorPrevioCEP = 'value ="'.$arrayEndereco['CEP'].'"';
+    if($arrayEndereco['CEP'] != null){
+        $valorPrevioCEP = $arrayEndereco['CEP'];
     }
-    else
-    {
-        $valorPrevioCEP = 'value =""';
+    else{
+        $valorPrevioCEP = '""';
     }
 
     //Cidade
-    if($arrayCidade['nomeCidade'] != null)
-    {
-        $valorPrevioCidade = 'value ="'.$arrayCidade['nomeCidade'].'"';
+    if($arrayCidade['nomeCidade'] != null){
+        $valorPrevioCidade = $arrayCidade['nomeCidade'];
     }
-    else
-    {
+    else{
         $valorPrevioCidade = 'value =""';
     }
 
      //Estado
-     if($arrayEstado['nomeEstado'] != null)
-     {
-         $valorPrevioEstado = 'value ="'.$arrayCidade['nomeEstado'].'"';
+     if($arrayEstado['nomeEstado'] != null){
+         $valorPrevioEstado = $arrayEstado['nomeEstado'];
      }
-     else
-     {
-         $valorPrevioEstado = 'value =""';
+     else{
+         $valorPrevioEstado = '""';
      }
 
      //Pais
-     if($arrayPais['nomePais'] != null)
-     {
-         $valorPrevioPais = 'value ="'.$arrayPais['nomePais'].'"';
+     if($arrayPais['nomePais'] != null){
+         $valorPrevioPais = $arrayPais['nomePais'];
      }
-     else
-     {
-         $valorPrevioPais = 'value =""';
+     else{
+         $valorPrevioPais = '""';
      }
 
+     //email
+     if($arrayUsuario['email'] != null){
+        $valorPrevioEmail = $arrayUsuario['email'];
+     }
+     else{
+        $valorPrevioEmail = '""';
+     }
+
+     //Telefone 
+     if($arrayUsuario['telefone'] != null){
+        $valorPrevioTelefone = $arrayUsuario['telefone'];
+     }
+     else{
+        $valorPrevioTelefone = '""';
+     }
 
         
         
     
     $conexao->close();
 ?>
-
+<br>
 

@@ -29,15 +29,32 @@
     
     require_once ('conexaoBD.php');
 
-    $sql1 = "SELECT * FROM usuario WHERE idusuario = '".$_SESSION['idusuario']."';";
-    $resultadoUsuario = $conexao->query($sql1);
-    $arrayUsuario = mysqli_fetch_array($resultadoUsuario);
+   //Usuario
+   $sql1 = "SELECT * FROM usuario WHERE idusuario = '".$_SESSION['idusuario']."';";
+   $resultadoUsuario = $conexao->query($sql1);
+   $arrayUsuario = mysqli_fetch_array($resultadoUsuario);
 
-        if ($arrayUsuario != null){
-            echo "$arrayUsuario not null <br>";
-            echo $arrayUsuario['nomeUsuario'];
+   //Endereço
+   $sql2 = "SELECT * FROM endereco WHERE idusuario = '".$arrayUsuario['idusuario']."';";
+   $resultadoEndereco = $conexao->query($sql2);
+   $arrayEndereco = mysqli_fetch_array($resultadoEndereco);
+
+   //Cidade
+   $sql3 = "SELECT * FROM cidade WHERE idcidade = '".$arrayEndereco['idcidade']."';";
+   $resultadoCidade = $conexao->query($sql3);
+   $arrayCidade = mysqli_fetch_array($resultadoCidade);
+
+   //Estado
+   $sql4 = "SELECT * FROM estado WHERE idestado = '".$arrayCidade['idestado']."';";
+   $resultadoEstado = $conexao->query($sql4);
+   $arrayEstado = mysqli_fetch_array($resultadoEstado);
+
+        if ($arrayEstado != null){
+            echo "$arrayEstado not null <br>";
+            echo $arrayEstado['nomeEstado'];
         }else{
-            echo "arrayUsuario is null";
+            echo "arrayEstado is null <br>";
+            echo $sql4;
         }
     
 
