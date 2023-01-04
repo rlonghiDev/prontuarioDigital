@@ -8,7 +8,7 @@
             <br>
             <!---<img src="img/gabi.jpg" alt="Gabi" style="width:40%" class="w3-circle w3-margin-top">--->
         </div>
-    <form class="w3-container " action="loginAction.php" method="post"> <!Passa as informações de Usuário e Senha para validação>
+    <form class="w3-container " action="loginAction.php" method="post"> <!--Passa as informações de Usuário e Senha para validação-->
         <div class="w3-section">
             <label style="font-weight: bold;">Usuário</label>
             <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Digite o nome" name="txtNome" required>

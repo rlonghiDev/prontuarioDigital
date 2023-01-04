@@ -2,27 +2,18 @@
 
     require_once ('verificaAcesso.php'); /*Verifica Sessão Ativa*/
     require_once ('cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
-   
 ?>
 
-<title>Dados pessoais</title>
-</head>
-
-<?php require_once ('infoUsuario.php');
-/* echo $arraylistaEstado['siglaEstado'];
-echo '<br>O array listaEstado possui: '.count($combolistaEstado).' itens <br>';
-print_r($combolistaEstado); */
-?>
-
-
+<title>Alteração de Senha</title>
+<body>
 <div class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-twothird">
 
     <form class="w3-container" action="updateUsuarioAction.php" method="post">
         <div class="w3-section">
-            <label style="font-weight: bold;">Nome</label>
-            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Digite o nome" name="txtNomeUsuario" <?php echo 'required value="'.$valorPrevioNomeUsuario.'"'; ?> >
+            <label style="font-weight: bold;">Senha Antiga</label>
+            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Digite a senha atual " name="txtNomeUsuario" <?php echo 'required value="'.$valorPrevioNomeUsuario.'"'; ?> >
             
-            <label style="font-weight: bold;">RG</label>
+            <label style="font-weight: bold;">Nova </label>
             <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o número do RG" name="txtRg" <?php echo 'required value="'.$valorPrevioRg.'"'; ?> >
 
             <label style="font-weight: bold;">CPF</label>
@@ -71,11 +62,10 @@ print_r($combolistaEstado); */
 
             <label style="font-weight: bold;">Telefone</label>
             <input class="w3-input w3-border" type="tel" placeholder="Informe o Número de Telefone" name="txtTelefone" required <?php echo 'required value="'.$valorPrevioTelefone.'"'; ?>>
-           
+        
             <button class="w3-button w3-block w3-teal w3-section w3-padding" type="submit">Atualizar</button>
         </div>
     </form>
-    <br>
-</div>
 <br>
-<?php require_once ('rodape.php'); /*Faz a chamada da estrutura padronizada de Rodapé*/?>
+</div>
+</body>

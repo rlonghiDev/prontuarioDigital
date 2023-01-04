@@ -35,17 +35,17 @@
    $arrayUsuario = mysqli_fetch_array($resultadoUsuario);
 
    //Endereço
-   $sql2 = "SELECT * FROM endereco WHERE idusuario = '".$arrayUsuario['idusuario']."';";
+   $sql2 = "SELECT * FROM endereco WHERE idusuario = '".$_SESSION['idusuario']."';";
    $resultadoEndereco = $conexao->query($sql2);
    $arrayEndereco = mysqli_fetch_array($resultadoEndereco);
 
    //Cidade
-   $sql3 = "SELECT * FROM cidade WHERE idcidade = '".$arrayEndereco['idcidade']."';";
+   $sql3 = "SELECT * FROM cidade WHERE idcidade = '".$_SESSION['idusuario']."';";
    $resultadoCidade = $conexao->query($sql3);
    $arrayCidade = mysqli_fetch_array($resultadoCidade);
 
    //Estado
-   $sql4 = "SELECT * FROM estado WHERE idestado = '".$arrayCidade['idestado']."';";
+   $sql4 = "SELECT * FROM estado WHERE idusuario = '".$_SESSION['idusuario']."';";
    $resultadoEstado = $conexao->query($sql4);
    $arrayEstado = mysqli_fetch_array($resultadoEstado);
 
