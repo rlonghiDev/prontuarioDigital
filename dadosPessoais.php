@@ -22,26 +22,31 @@ print_r($combolistaEstado); */
             <label style="font-weight: bold;">Nome</label>
             <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Digite o nome" name="txtNomeUsuario" <?php echo 'required value="'.$valorPrevioNomeUsuario.'"'; ?> >
             
-            <label style="font-weight: bold;">RG</label>
-            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o número do RG" name="txtRg" <?php echo 'required value="'.$valorPrevioRg.'"'; ?> >
+            <div>
+                <label style="font-weight: bold;">RG</label>
+                <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o número do RG" name="txtRg" <?php echo 'required value="'.$valorPrevioRg.'"'; ?> >
+            </div>
 
             <label style="font-weight: bold;">CPF</label>
-            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o número do CPF" name="txtCpf" <?php echo 'required value="'.$valorPrevioCpf.'"'; ?> >
+            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o número do CPF" name="txtCpf" <?php echo 'required value="'.$valorPrevioCpf.'"'; ?> maxlength="9" onblur="pesquisacep(this.value);" >
             
             <label style="font-weight: bold;">Logradouro</label>
-            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o nome do Logradouro" name="txtLogradouro" <?php echo 'required value="'.$valorPrevioLogradouro.'"'; ?> >
+            <input class="w3-input w3-border w3-border-gray" type="text" placeholder="Informe o nome do Logradouro" name="txtLogradouro" id="rua" <?php echo 'required value="'.$valorPrevioLogradouro.'"'; ?> >
 
             <label style="font-weight: bold;">Número</label>
             <input class="w3-input w3-border" type="text" placeholder="Informe o número" name="txtNumero" <?php echo 'required value="'.$valorPrevioNumero.'"'; ?> >
 
+            <label style="font-weight: bold;">Bairro</label>
+            <input class="w3-input w3-border" type="text" name="txtNumero" id="bairro"<?php echo 'required value="'.$valorPrevioBairro.'"'; ?> >
+
             <label style="font-weight: bold;">CEP</label>
-            <input class="w3-input w3-border" type="text" placeholder="Informe o CEP" name="txtCEP" <?php echo 'required value="'.$valorPrevioCEP.'"'; ?> >
+            <input class="w3-input w3-border" type="text" placeholder="Informe o CEP" name="txtCEP" id="cep" <?php echo 'required value="'.$valorPrevioCEP.'"'; ?> >
 
             <label style="font-weight: bold;">Cidade</label>
-            <input class="w3-input w3-border" type="text" placeholder="Informe a Cidade" name="txtCidade" <?php echo 'required value="'.$valorPrevioCidade.'"'; ?> >
+            <input class="w3-input w3-border" type="text" placeholder="Informe a Cidade" name="txtCidade" id="cidade" <?php echo 'required value="'.$valorPrevioCidade.'"'; ?> >
 
             <label style="font-weight: bold;">Estado</label>
-            <select class="w3-input w3-border" name="txtEstado" >
+            <select class="w3-input w3-border" name="txtEstado" id="uf" >
                 <?php 
                 $estadoFixoString = str_replace('"','',$valorPrevioEstado);
                     for ($i=0; $i < count($combolistaEstado); $i++) {
@@ -78,4 +83,5 @@ print_r($combolistaEstado); */
     <br>
 </div>
 <br>
+<script src="js/cep.js"></script>
 <?php require_once ('rodape.php'); /*Faz a chamada da estrutura padronizada de Rodapé*/?>

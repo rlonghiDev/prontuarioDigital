@@ -15,6 +15,21 @@
     $resultadoEndereco = $conexao->query($sql2);
     $arrayEndereco = mysqli_fetch_array($resultadoEndereco);
 
+    //Cidade
+    $sql3 = "SELECT * FROM cidade WHERE idusuario = '".$_SESSION['idusuario']."';";
+    $resultadoCidade = $conexao->query($sql3);
+    $arrayCidade = mysqli_fetch_array($resultadoCidade);
+
+    //Estado
+    $sql4 = "SELECT * FROM estado WHERE idusuario = '".$_SESSION['idusuario']."';";
+    $resultadoEstado = $conexao->query($sql4);
+    $arrayEstado = mysqli_fetch_array($resultadoEstado);
+
+    //Pais
+    $sql5 = "SELECT * FROM pais WHERE idusuario = '".$_SESSION['idusuario']."';";
+    $resultadoPais = $conexao->query($sql5);
+    $arrayPais = mysqli_fetch_array($resultadoPais);
+
     //listaEstado
     
     $sql6 = "SELECT * FROM listaEstado where idlistaEstado = 1;";
@@ -87,24 +102,16 @@
         $valorPrevioCEP = '""';
     }
 
-    //Bairro
-    if($arrayEndereco['bairro'] != null){
-        $valorPrevioBairro = $arrayEndereco['Bairro'];
-    }
-    else{
-        $valorPrevioBairro = '""';
-    }
-
     //Cidade
-    if($arrayEndereco['nomeCidade'] != null){
+    if($arrayCidade['nomeCidade'] != null){
         $valorPrevioCidade = $arrayCidade['nomeCidade'];
     }
     else{
-        $valorPrevioCidade = '""';
+        $valorPrevioCidade = 'value =""';
     }
 
      //Estado
-     if($arrayEndereco['nomeEstado'] != null){
+     if($arrayEstado['nomeEstado'] != null){
          $valorPrevioEstado = $arrayEstado['nomeEstado'];
      }
      else{
@@ -112,7 +119,7 @@
      }
 
      //Pais
-     if($arrayEndereco['nomePais'] != null){
+     if($arrayPais['nomePais'] != null){
          $valorPrevioPais = $arrayPais['nomePais'];
      }
      else{
@@ -135,7 +142,11 @@
         $valorPrevioTelefone = '""';
      }
 
+        
+        
+    
     $conexao->close();
 ?>
 <br>
+
 
