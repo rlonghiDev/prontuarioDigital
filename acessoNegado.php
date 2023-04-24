@@ -1,4 +1,4 @@
-<?php require_once ('cabecalho.php'); /*Faz a chamada da estrutura padronizada de Cabeçalho*/ ?> 
+<?php require_once ('./cabecalho.php'); /*Faz a chamada da estrutura padronizada de Cabeçalho*/ ?> 
     <title>Sessão Finalizada</title>
 </head>
 <body>

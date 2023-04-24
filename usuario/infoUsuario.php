@@ -1,9 +1,9 @@
 <?php
 
-    require_once ('verificaAcesso.php'); /*Verifica Sessão Ativa*/
-    require_once ('cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
+    require_once ('../verificaAcesso.php'); /*Verifica Sessão Ativa*/
+    require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
 
-    require_once ('conexaoBD.php');
+    require_once ('../bd/conexaoBD.php');
 
     //Usuario
     $sql1 = "SELECT * FROM usuario WHERE idusuario = '".$_SESSION['idusuario']."';";
@@ -15,28 +15,8 @@
     $resultadoEndereco = $conexao->query($sql2);
     $arrayEndereco = mysqli_fetch_array($resultadoEndereco);
 
-    //listaEstado
     
-    $sql6 = "SELECT * FROM listaEstado where idlistaEstado = 1;";
-    $resultadolistaEstado = $conexao->query($sql6);
-    $arraylistaEstado = mysqli_fetch_array($resultadolistaEstado);
-    $k = 2;
-    $combolistaEstado = array($arraylistaEstado['siglaEstado']);
-
-    //while ($arraylistaEstado['siglaEstado'] != null){
-    //for ($i = 0; $i < 26 ; $i++)
-
-    while ($arraylistaEstado['siglaEstado'] != null){        
-        
-        $sql6 = "SELECT * FROM listaEstado where idlistaEstado = '".$k."';";
-        $resultadolistaEstado = $conexao->query($sql6);
-        $arraylistaEstado = mysqli_fetch_array($resultadolistaEstado);
-        $k++;
-        array_push($combolistaEstado, $arraylistaEstado['siglaEstado']);
-
-
-    }
-
+   
     //Nome usuário
     if($arrayUsuario['nomeUsuario'] != null){
         $valorPrevioNomeUsuario = $arrayUsuario['nomeUsuario'];
@@ -80,8 +60,8 @@
     }
    
     //CEP
-    if($arrayEndereco['CEP'] != null){
-        $valorPrevioCEP = $arrayEndereco['CEP'];
+    if($arrayEndereco['cep'] != null){
+        $valorPrevioCEP = $arrayEndereco['cep'];
     }
     else{
         $valorPrevioCEP = '""';
@@ -89,35 +69,28 @@
 
     //Bairro
     if($arrayEndereco['bairro'] != null){
-        $valorPrevioBairro = $arrayEndereco['Bairro'];
+        $valorPrevioBairro = $arrayEndereco['bairro'];
     }
     else{
         $valorPrevioBairro = '""';
     }
 
     //Cidade
-    if($arrayEndereco['nomeCidade'] != null){
-        $valorPrevioCidade = $arrayCidade['nomeCidade'];
+    if($arrayEndereco['cidade'] != null){
+        $valorPrevioCidade = $arrayEndereco['cidade'];
     }
     else{
         $valorPrevioCidade = '""';
     }
 
      //Estado
-     if($arrayEndereco['nomeEstado'] != null){
-         $valorPrevioEstado = $arrayEstado['nomeEstado'];
+     if($arrayEndereco['estado'] != null){
+         $valorPrevioEstado = $arrayEndereco['estado'];
      }
      else{
          $valorPrevioEstado = 'SP';
      }
 
-     //Pais
-     if($arrayEndereco['nomePais'] != null){
-         $valorPrevioPais = $arrayPais['nomePais'];
-     }
-     else{
-         $valorPrevioPais = '""';
-     }
 
      //email
      if($arrayUsuario['email'] != null){

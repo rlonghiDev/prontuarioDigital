@@ -1,4 +1,4 @@
-<?php require_once ('cabecalho.php'); ?>
+<?php require_once ($_SERVER['DOCUMENT_ROOT'].'/cabecalho.php'); ?>
     <title>Login Action</title>
 </head>
 <body>
@@ -7,7 +7,7 @@
             session_start();
             $usuario = $_POST['txtUsuario'];
             $senha = $_POST['txtSenha'];
-            require_once ('conexaoBD.php');
+            require_once ('./bd/conexaoBD.php');
 
             $sql = "SELECT * FROM usuario WHERE usuario = '".$usuario."';";
             $resultado = $conexao->query($sql);
@@ -22,7 +22,7 @@
 
                     if($situacao == "ativo"){
                         echo '
-                        <a href="principal.php">
+                        <a href="./principal/principal.php">
                         <h1 class="w3-button w3-teal">'.$usuario.', Seja Bem-Vindo(a)! </h1>
                         </a>
                         ';
@@ -33,7 +33,7 @@
                     }else{
 
                         echo '
-                        <a href="index.php">
+                        <a href="./index.php">
                         <h1 class="w3-button w3-teal">Usuário Bloqueado!<br> Contate seu administrador</h1>
                         </a> ';
                     }
@@ -43,7 +43,7 @@
                 else
                 {
                     echo '
-                    <a href="index.php">
+                    <a href="./index.php">
                     <h1 class="w3-button w3-teal">Usuário ou senha Inválidos</h1>
                     </a> ';
                 }
@@ -52,7 +52,7 @@
             else
             {
                 echo '
-                <a href="index.php">
+                <a href="./index.php">
                 <h1 class="w3-button w3-teal">Login Inválido! </h1>
                 </a>
                 ';
@@ -60,4 +60,4 @@
             $conexao->close();
         ?>
     </div>
-<?php require_once ('rodape.php'); ?>
+<?php require_once ('./rodape.php'); ?>
