@@ -5,7 +5,7 @@ if(!isset($_SESSION))
 }
 if((!isset ($_SESSION['logado']) == true))
 {
-    header('location:acessoNegado.php');
+    header('location:/acessoNegado.php');
     die();
 }
 ?>

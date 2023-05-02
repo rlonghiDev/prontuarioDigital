@@ -1,7 +1,7 @@
 <?php
 
-    require_once ('verificaAcesso.php'); /*Verifica Sessão Ativa*/
-    require_once ('cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
+    require_once ('../verificaAcesso.php'); /*Verifica Sessão Ativa*/
+    require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
 
 
     $nomeUsuario = $_POST['txtNomeUsuario'];
@@ -18,7 +18,7 @@
     $telefone = $_POST['txtTelefone'];
     $pais = "Brasil";
     
-    require_once ('conexaoBD.php');
+    require_once ('../bd/conexaoBD.php');
 
     $sql2 = "SELECT * FROM endereco WHERE idusuario = '".$_SESSION['idusuario']."';";
     $resultadoEndereco = $conexao->query($sql2);
@@ -53,9 +53,9 @@
 
     if($conexao->query($sql) === TRUE){
             
-        echo '<a href="principal.php"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a>';
+        echo '<a href="/principal/principal.php"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a>';
         }else{
-        echo '<a href="dadosPessoais.php"><h1>class="w3-button w3-teal">Houve erro</h1></a>';
+        echo '<a href="/usuario/dadosPessoais.php"><h1>class="w3-button w3-teal">Houve erro</h1></a>';
     }
     $conexao->close();
 
