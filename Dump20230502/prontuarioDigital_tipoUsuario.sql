@@ -16,26 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoEndereco`
+-- Table structure for table `tipoUsuario`
 --
 
-DROP TABLE IF EXISTS `tipoEndereco`;
+DROP TABLE IF EXISTS `tipoUsuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tipoEndereco` (
-  `idtipoEndereco` int NOT NULL AUTO_INCREMENT,
-  `tipoEndereco` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idtipoEndereco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `tipoUsuario` (
+  `idtipoUsuario` int NOT NULL AUTO_INCREMENT,
+  `cargoUsuario` varchar(25) DEFAULT NULL,
+  `nivelAcesso` int DEFAULT NULL,
+  PRIMARY KEY (`idtipoUsuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoEndereco`
+-- Dumping data for table `tipoUsuario`
 --
 
-LOCK TABLES `tipoEndereco` WRITE;
-/*!40000 ALTER TABLE `tipoEndereco` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tipoEndereco` ENABLE KEYS */;
+LOCK TABLES `tipoUsuario` WRITE;
+/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
+INSERT INTO `tipoUsuario` VALUES (1,'administrador',0),(2,'medico',1),(3,'socorrista',2),(4,'enferemeira',3),(5,'recepcao',4);
+/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

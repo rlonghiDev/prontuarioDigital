@@ -16,33 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `paciente`
+-- Table structure for table `listaEstado`
 --
 
-DROP TABLE IF EXISTS `paciente`;
+DROP TABLE IF EXISTS `listaEstado`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `paciente` (
-  `idpaciente` int NOT NULL AUTO_INCREMENT COMMENT '	',
-  `nomePaciente` varchar(60) DEFAULT NULL,
-  `dataNascimento` varchar(12) DEFAULT NULL,
-  `sexoBiologico` varchar(11) DEFAULT NULL,
-  `genero` varchar(45) DEFAULT NULL,
-  `nomePai` varchar(60) DEFAULT NULL,
-  `nomeMae` varchar(60) DEFAULT NULL,
-  `naturalidade` varchar(60) DEFAULT NULL,
-  `convenioMedico` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idpaciente`)
+CREATE TABLE `listaEstado` (
+  `idlistaEstado` int NOT NULL,
+  `siglaEstado` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`idlistaEstado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `paciente`
+-- Dumping data for table `listaEstado`
 --
 
-LOCK TABLES `paciente` WRITE;
-/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
+LOCK TABLES `listaEstado` WRITE;
+/*!40000 ALTER TABLE `listaEstado` DISABLE KEYS */;
+/*!40000 ALTER TABLE `listaEstado` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

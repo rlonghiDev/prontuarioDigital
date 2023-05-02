@@ -16,31 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `exames`
+-- Table structure for table `anamnese`
 --
 
-DROP TABLE IF EXISTS `exames`;
+DROP TABLE IF EXISTS `anamnese`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `exames` (
-  `idexame` int NOT NULL AUTO_INCREMENT,
-  `nomeExame` varchar(45) DEFAULT NULL,
-  `tipoExame` varchar(45) DEFAULT NULL,
-  `realizacao` varchar(45) DEFAULT NULL,
+CREATE TABLE `anamnese` (
+  `idanamnese` int NOT NULL AUTO_INCREMENT COMMENT '	',
+  `queixa` varchar(100) DEFAULT NULL,
+  `historicoDoenca` varchar(100) DEFAULT NULL,
+  `historicoFamiliar` varchar(100) DEFAULT NULL,
+  `historicoPessoal` varchar(100) DEFAULT NULL,
   `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idexame`),
-  KEY `fk_exames_paciente1_idx` (`idpaciente`),
-  CONSTRAINT `fk_exames_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
+  `cid_codCid` varchar(10) NOT NULL,
+  PRIMARY KEY (`idanamnese`),
+  KEY `fk_anamnese_paciente1_idx` (`idpaciente`),
+  KEY `fk_anamnese_cid1_idx` (`cid_codCid`),
+  CONSTRAINT `fk_anamnese_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `exames`
+-- Dumping data for table `anamnese`
 --
 
-LOCK TABLES `exames` WRITE;
-/*!40000 ALTER TABLE `exames` DISABLE KEYS */;
-/*!40000 ALTER TABLE `exames` ENABLE KEYS */;
+LOCK TABLES `anamnese` WRITE;
+/*!40000 ALTER TABLE `anamnese` DISABLE KEYS */;
+/*!40000 ALTER TABLE `anamnese` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

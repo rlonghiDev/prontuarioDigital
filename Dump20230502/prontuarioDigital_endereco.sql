@@ -16,28 +16,41 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `tipoUsuario`
+-- Table structure for table `endereco`
 --
 
-DROP TABLE IF EXISTS `tipoUsuario`;
+DROP TABLE IF EXISTS `endereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tipoUsuario` (
-  `idtipoUsuario` int NOT NULL AUTO_INCREMENT,
-  `cargoUsuario` varchar(25) DEFAULT NULL,
-  `nivelAcesso` int DEFAULT NULL,
-  PRIMARY KEY (`idtipoUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `endereco` (
+  `idendereco` int NOT NULL AUTO_INCREMENT,
+  `logradouro` varchar(65) DEFAULT NULL,
+  `bairro` varchar(45) DEFAULT NULL,
+  `cidade` varchar(45) DEFAULT NULL,
+  `estado` varchar(25) DEFAULT NULL,
+  `pais` varchar(20) DEFAULT NULL,
+  `cep` varchar(20) DEFAULT NULL,
+  `idtipoEndereco` int NOT NULL,
+  `idusuario` int NOT NULL COMMENT '	',
+  `numero` varchar(10) DEFAULT NULL,
+  `observacao` varchar(100) DEFAULT NULL,
+  `idpaciente` int NOT NULL,
+  PRIMARY KEY (`idendereco`,`idtipoEndereco`,`idusuario`),
+  KEY `fk_endereco_tipoEndereco1_idx` (`idtipoEndereco`),
+  KEY `fk_endereco_usuario1_idx` (`idusuario`),
+  KEY `fk_endereco_paciente1_idx` (`idpaciente`),
+  CONSTRAINT `fk_endereco_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tipoUsuario`
+-- Dumping data for table `endereco`
 --
 
-LOCK TABLES `tipoUsuario` WRITE;
-/*!40000 ALTER TABLE `tipoUsuario` DISABLE KEYS */;
-INSERT INTO `tipoUsuario` VALUES (1,'administrador',0);
-/*!40000 ALTER TABLE `tipoUsuario` ENABLE KEYS */;
+LOCK TABLES `endereco` WRITE;
+/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
+INSERT INTO `endereco` VALUES (2,'Rua Apucarana','Tatuapé','São Paulo','SP','Brasil','03311000',2,5,'815a',NULL,1),(3,NULL,NULL,NULL,NULL,NULL,NULL,1,6,NULL,NULL,1);
+/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

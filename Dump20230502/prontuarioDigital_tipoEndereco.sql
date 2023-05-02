@@ -16,32 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `prescricao`
+-- Table structure for table `tipoEndereco`
 --
 
-DROP TABLE IF EXISTS `prescricao`;
+DROP TABLE IF EXISTS `tipoEndereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `prescricao` (
-  `idprescricao` int NOT NULL AUTO_INCREMENT,
-  `medicamento` varchar(60) DEFAULT NULL,
-  `fisioterapia` varchar(60) DEFAULT NULL,
-  `evitar` varchar(100) DEFAULT NULL,
-  `recomendado` varchar(45) DEFAULT NULL,
-  `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idprescricao`),
-  KEY `fk_prescricao_paciente1_idx` (`idpaciente`),
-  CONSTRAINT `fk_prescricao_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
+CREATE TABLE `tipoEndereco` (
+  `idtipoEndereco` int NOT NULL AUTO_INCREMENT,
+  `tipoEndereco` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idtipoEndereco`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `prescricao`
+-- Dumping data for table `tipoEndereco`
 --
 
-LOCK TABLES `prescricao` WRITE;
-/*!40000 ALTER TABLE `prescricao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prescricao` ENABLE KEYS */;
+LOCK TABLES `tipoEndereco` WRITE;
+/*!40000 ALTER TABLE `tipoEndereco` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tipoEndereco` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

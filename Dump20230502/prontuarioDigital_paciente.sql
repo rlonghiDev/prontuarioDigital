@@ -16,31 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `procedimento`
+-- Table structure for table `paciente`
 --
 
-DROP TABLE IF EXISTS `procedimento`;
+DROP TABLE IF EXISTS `paciente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `procedimento` (
-  `idprocedimento` int NOT NULL AUTO_INCREMENT,
-  `tipoProcedimento` varchar(45) DEFAULT NULL,
-  `nomeProcedimento` varchar(45) DEFAULT NULL,
-  `dataExecucao` varchar(12) DEFAULT NULL,
-  `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idprocedimento`),
-  KEY `fk_procedimento_paciente1_idx` (`idpaciente`),
-  CONSTRAINT `fk_procedimento_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `paciente` (
+  `idpaciente` int NOT NULL AUTO_INCREMENT COMMENT '	',
+  `nomePaciente` varchar(60) DEFAULT NULL,
+  `dataNascimento` varchar(12) DEFAULT NULL,
+  `sexoBiologico` varchar(11) DEFAULT NULL,
+  `genero` varchar(45) DEFAULT NULL,
+  `nomePai` varchar(60) DEFAULT NULL,
+  `nomeMae` varchar(60) DEFAULT NULL,
+  `naturalidade` varchar(60) DEFAULT NULL,
+  `convenioMedico` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idpaciente`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `procedimento`
+-- Dumping data for table `paciente`
 --
 
-LOCK TABLES `procedimento` WRITE;
-/*!40000 ALTER TABLE `procedimento` DISABLE KEYS */;
-/*!40000 ALTER TABLE `procedimento` ENABLE KEYS */;
+LOCK TABLES `paciente` WRITE;
+/*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
+INSERT INTO `paciente` VALUES (1,'Paciente01',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

@@ -16,42 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `endereco`
+-- Table structure for table `exames`
 --
 
-DROP TABLE IF EXISTS `endereco`;
+DROP TABLE IF EXISTS `exames`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `endereco` (
-  `idendereco` int NOT NULL AUTO_INCREMENT,
-  `logradouro` varchar(65) DEFAULT NULL,
-  `bairro` varchar(45) DEFAULT NULL,
-  `cidade` varchar(45) DEFAULT NULL,
-  `estado` varchar(25) DEFAULT NULL,
-  `pais` varchar(20) DEFAULT NULL,
-  `cep` varchar(20) DEFAULT NULL,
-  `idtipoEndereco` int NOT NULL,
-  `idusuario` int NOT NULL COMMENT '	',
-  `numero` varchar(10) DEFAULT NULL,
-  `observacao` varchar(100) DEFAULT NULL,
+CREATE TABLE `exames` (
+  `idexame` int NOT NULL AUTO_INCREMENT,
+  `nomeExame` varchar(45) DEFAULT NULL,
+  `tipoExame` varchar(45) DEFAULT NULL,
+  `realizacao` varchar(45) DEFAULT NULL,
   `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idendereco`,`idtipoEndereco`,`idusuario`),
-  KEY `fk_endereco_tipoEndereco1_idx` (`idtipoEndereco`),
-  KEY `fk_endereco_usuario1_idx` (`idusuario`),
-  KEY `fk_endereco_paciente1_idx` (`idpaciente`),
-  CONSTRAINT `fk_endereco_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`),
-  CONSTRAINT `fk_endereco_tipoEndereco1` FOREIGN KEY (`idtipoEndereco`) REFERENCES `tipoEndereco` (`idtipoEndereco`),
-  CONSTRAINT `fk_endereco_usuario1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
+  PRIMARY KEY (`idexame`),
+  KEY `fk_exames_paciente1_idx` (`idpaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `endereco`
+-- Dumping data for table `exames`
 --
 
-LOCK TABLES `endereco` WRITE;
-/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
-/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
+LOCK TABLES `exames` WRITE;
+/*!40000 ALTER TABLE `exames` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exames` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -63,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45

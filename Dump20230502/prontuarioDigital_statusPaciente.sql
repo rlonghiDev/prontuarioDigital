@@ -16,32 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `evolucao`
+-- Table structure for table `statusPaciente`
 --
 
-DROP TABLE IF EXISTS `evolucao`;
+DROP TABLE IF EXISTS `statusPaciente`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `evolucao` (
-  `idevolucao` int NOT NULL AUTO_INCREMENT,
-  `dataConsulta` varchar(12) DEFAULT NULL,
-  `estadoPaciente` varchar(100) DEFAULT NULL,
-  `recomendacao` varchar(100) DEFAULT NULL,
-  `proximaConsulta` varchar(45) DEFAULT NULL,
+CREATE TABLE `statusPaciente` (
+  `idstatusPaciente` int NOT NULL AUTO_INCREMENT,
+  `inicioTratamento` varchar(12) DEFAULT NULL,
+  `altaTratamento` varchar(12) DEFAULT NULL,
+  `obito` varchar(12) DEFAULT NULL,
+  `transferencia` varchar(12) DEFAULT NULL,
+  `medicoResponsavel` varchar(45) DEFAULT NULL,
   `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idevolucao`),
-  KEY `fk_evolucao_paciente1_idx` (`idpaciente`),
-  CONSTRAINT `fk_evolucao_paciente1` FOREIGN KEY (`idpaciente`) REFERENCES `paciente` (`idpaciente`)
+  PRIMARY KEY (`idstatusPaciente`),
+  KEY `fk_statusPaciente_paciente1_idx` (`idpaciente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `evolucao`
+-- Dumping data for table `statusPaciente`
 --
 
-LOCK TABLES `evolucao` WRITE;
-/*!40000 ALTER TABLE `evolucao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `evolucao` ENABLE KEYS */;
+LOCK TABLES `statusPaciente` WRITE;
+/*!40000 ALTER TABLE `statusPaciente` DISABLE KEYS */;
+/*!40000 ALTER TABLE `statusPaciente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-24 10:30:22
+-- Dump completed on 2023-05-02 19:21:45
