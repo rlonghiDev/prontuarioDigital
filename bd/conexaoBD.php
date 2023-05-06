@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "Edu@2021";
-$dbname = "prontuarioDigital";
+$username = "id20543955_equipetcc";
+$password = "Etec@2023!maio";
+$dbname = "id20543955_prontuariodigital";
 $conexao = new mysqli($servername, $username, $password, $dbname);
 
 if ($conexao->connect_error) {

@@ -46,13 +46,13 @@ require_once ('../bd/conexaoBD.php'); //Conectividade com o Banco de Dados
             echo "<td>".$usuarios['cpf']."</td>";
             echo "<td>".$usuarios['rg']."</td>";
             echo "<td>".$usuarios['idtipoUsuario']."</td>";
-            echo '<td><a href="/administracao/atualizaUsuario.php?idusuario='.$usuarios['idusuario'].'">Altera</a></td>';
+            echo '<td><a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$usuarios['idusuario'].'">Altera</a></td>';
             echo "</tr>";
 
         }
 
         echo "</table>";
-    echo "</div>";
+        echo "</div>";
 
 
 

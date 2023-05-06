@@ -10,11 +10,7 @@ require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
 
 <?php require_once('../topoPagina.php'); ?>
 
-<?php require_once ($_SERVER['DOCUMENT_ROOT'].'/usuario/infoUsuario.php');
-/* echo $arraylistaEstado['siglaEstado'];
-echo '<br>O array listaEstado possui: '.count($combolistaEstado).' itens <br>';
-print_r($combolistaEstado); */
-?>
+<?php require_once ('./infoUsuario.php'); ?>
 
 
 <div class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-twothird">
@@ -71,7 +67,7 @@ print_r($combolistaEstado); */
 </div>
 <br>
 
-<script src = "/js/cep.js"></script>
+<script src = "/prontuarioDigital/js/cep.js"></script>
 
 <?php 
 

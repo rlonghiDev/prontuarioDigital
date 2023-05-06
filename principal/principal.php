@@ -1,7 +1,7 @@
 <?php
 
-    require_once ($_SERVER['DOCUMENT_ROOT'].'/verificaAcesso.php'); /*Verifica Sessão Ativa*/
-    require_once ($_SERVER['DOCUMENT_ROOT'].'/cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
+    require_once ('../verificaAcesso.php'); /*Verifica Sessão Ativa*/
+    require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
    
 ?>
 
@@ -11,7 +11,7 @@
 
 <body>
 
-<?php require_once($_SERVER['DOCUMENT_ROOT'].'/topoPaginaP.php'); ?>
+<?php require_once('../topoPaginaP.php'); ?>
 
 
 <div style="background-color:blur; text-align:left;">
@@ -32,7 +32,7 @@
 
 
 
-<?php require_once ($_SERVER['DOCUMENT_ROOT'].'/rodape.php'); /*Faz a chamada da estrutura padronizada de Rodapé*/ ?>
+<?php require_once ('../rodape.php'); /*Faz a chamada da estrutura padronizada de Rodapé*/ ?>
 
 
 </body>

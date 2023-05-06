@@ -53,9 +53,9 @@
 
     if($conexao->query($sql) === TRUE){
             
-        echo '<a href="/principal/principal.php"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a>';
+        echo '<br><br><center><a href="/prontuarioDigital/principal/principal.php"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a></center>';
         }else{
-        echo '<a href="/usuario/dadosPessoais.php"><h1>class="w3-button w3-teal">Houve erro</h1></a>';
+        echo '<br><br><center><a href="/prontuarioDigital/principal/usuario/dadosPessoais.php"><h1>class="w3-button w3-teal">Houve erro</h1></a></center>';
     }
     $conexao->close();
 

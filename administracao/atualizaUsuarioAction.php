@@ -25,9 +25,9 @@ $conexao->query($updateUsuario);
 
 if($conexao->query($updateUsuario) === TRUE){
             
-    echo '<a href="/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a>';
+    echo '<br><br><center><a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a></center>';
     }else{
-    echo '<a href="/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1>class="w3-button w3-teal">Houve erro</h1></a>';
+    echo '<br><br><center><a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1>class="w3-button w3-teal">Houve erro</h1></a></center>';
 }
 $conexao->close();
 
