@@ -8,7 +8,7 @@ require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
     <div class="w3-quarter"><a href= "/principal/principal.php">Principal</a></div>
     <div class="w3-quarter">Prontuario</div>
     <div class="w3-quarter">Atualiza senha</div>
-    <div class="w3-quarter"><a href = "/logoutAction.php">Sair</a></div>
+    <div class="w3-quarter"><a href = "/prontuarioDigital/logoutAction.php">Sair</a></div>
 </div>
 
 <br>

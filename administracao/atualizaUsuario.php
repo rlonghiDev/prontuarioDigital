@@ -135,14 +135,10 @@ $idUsuario = $_GET['idusuario'];
 
                     if($valorPrevioSituacao == 'ativo'){
                         $opcao1 = '<option value="ativo" selected>ativo</option>';
+                        $opcao2 = '<option value="inativo">inativo</option>';
                     }else{
                         $opcao1 = '<option value="ativo">ativo</option>';
-                    }
-
-                    if ($valorPrevioSituacao == 'inativo'){
                         $opcao2 = '<option value="inativo" selected>inativo</option>';
-                    }else{
-                        $opcao2 = '<option value="inativo">inativo</option>';
                     }
 
                     echo $opcao1;
