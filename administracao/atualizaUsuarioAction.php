@@ -20,14 +20,24 @@ $idTipoUsuario = $_POST['txtTipoUsuario'];
 
 $updateUsuario = "UPDATE usuario SET usuario = '".$usuario."', nomeUsuario = '".$nomeUsuario."', senha = '".$senha."', nivelAcesso = '".$nivelAcesso."', situacao = '".$situacao."', email = '".$email."', telefone = '".$telefone."', cpf = '".$cpf."', rg = '".$rg."' WHERE idusuario = '".$idUsuario."';";
 
-$conexao->query($updateUsuario);
+//$conexao->query($updateUsuario);
 
 
 if($conexao->query($updateUsuario) === TRUE){
             
-    echo '<br><br><center><a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a></center>';
+    echo '<br><br><center>
+    <a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'">
+    <h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1>
+    </a>
+    </center>';
     }else{
-    echo '<br><br><center><a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'"><h1>class="w3-button w3-teal">Houve erro</h1></a></center>';
+
+    echo '<br><br><center>
+    <a href="/prontuarioDigital/administracao/atualizaUsuario.php?idusuario='.$idUsuario.'">
+    <h1>class="w3-button w3-teal">Houve erro</h1>
+    </a>
+    </center>';
+
 }
 $conexao->close();
 

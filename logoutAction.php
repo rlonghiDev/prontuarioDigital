@@ -1,3 +1,4 @@
+
 <?php 
     require_once ('verificaAcesso.php');
     /*Logout*/

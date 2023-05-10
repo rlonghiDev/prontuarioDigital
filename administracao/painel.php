@@ -2,14 +2,10 @@
 
 require_once ('../verificaAcesso.php'); /*Verifica Sessão Ativa*/
 require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
+require_once('../topoPagina.php');
+require_once('./topoPaginaAdm.php');
    
 ?>
-<div class="w3-row-padding w3-margin-top" style="background-color:dimgrey; color:white; text-align:center;"> 
-    <div class="w3-quarter"><a href= "/principal/principal.php">Principal</a></div>
-    <div class="w3-quarter">Prontuario</div>
-    <div class="w3-quarter">Atualiza senha</div>
-    <div class="w3-quarter"><a href = "/prontuarioDigital/logoutAction.php">Sair</a></div>
-</div>
 
 <br>
 <br>

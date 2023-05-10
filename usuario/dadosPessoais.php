@@ -9,6 +9,7 @@ require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
 </head>
 
 <?php require_once('../topoPagina.php'); ?>
+<?php require_once('./topoPaginaUsuario.php'); ?>
 
 <?php require_once ('./infoUsuario.php'); ?>
 

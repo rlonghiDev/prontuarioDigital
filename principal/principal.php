@@ -11,7 +11,7 @@
 
 <body>
 
-<?php require_once('../topoPaginaP.php'); ?>
+<?php require_once('../topoPagina.php'); ?>
 
 
 <div style="background-color:blur; text-align:left;">
