@@ -1,7 +1,6 @@
 <?php
 
     require_once ('../verificaAcesso.php'); /*Verifica Sessão Ativa*/
-    require_once ('../cabecalho.php'); /*Padrão de apresentação do cabeçalho*/
 
 
     $nomeUsuario = $_POST['txtNomeUsuario'];
