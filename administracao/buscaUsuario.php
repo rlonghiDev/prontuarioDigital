@@ -7,7 +7,7 @@ require_once ('../bd/conexaoBD.php'); //Conectividade com o Banco de Dados
 
 
                     
-    // Sequencia para carregamento do combo box (Select)
+    // Sequencia para carregamento da lista de usuarios (Select)
     $sqlUsuario = "SELECT * FROM usuario;"; 
     $resultadoUsuario = $conexao->query($sqlUsuario);
 

@@ -22,6 +22,8 @@
     $telefone = $_POST['txtTelefone'];
     $pais = "Brasil";
     $convenio = $_POST['txtConvênio'];
+    $email = $_POST['txtEmail'];
+    $telefone = $_POST['txtTelefone'];
     
     require_once ('../bd/conexaoBD.php');
 
@@ -44,32 +46,28 @@
     
     if($nomePaciente != null){
 
-        $sql1 = "INSERT INTO paciente (nomePaciente, dataNascimento,sexoBiologico, genero, nomePai,nomeMae,naturalidade,convenioMedico,cpf) VALUES ('.$nomePaciente.','
+        $sql1 = "INSERT INTO paciente (nomePaciente, dataNascimento, sexoBiologico, genero, nomePai, nomeMae, naturalidade, convenioMedico, cpf, email, telefone) 
+        VALUES ('".$nomePaciente."','".$dataNascimento."','".$sexoBiologico."','".$genero."','".$nomePai."','".$nomeMae."','".$naturalDe."','".$convenio."','".$cpf."','".$email."','".$telefone."');";
 
-        ";
+        $conexao->query($sql1);
+       
+        $pacienteId = mysqli_insert_id($conexao);
 
-        $sql = "INSERT INTO endereco (logradouro, bairro, cidade, estado, pais, cep, idusuario, idtipoEndereco,  numero) VALUES('".$logradouro."','".$bairro."','".$cidade."','".$estado."','".$pais."','".$cep."','".$_SESSION['idusuario']."','".$tipoEndereco."','".$numeroCasa."');";
-        echo '<script>console.log("idUsuario null")</script>';
+        $sql = "INSERT INTO endereco (logradouro, bairro, cidade, estado, pais, cep, idtipoEndereco, numero, idpaciente, idusuario) 
+        VALUES('".$logradouro."','".$bairro."','".$cidade."','".$estado."','".$pais."','".$cep."','".$tipoEndereco."','".$numeroCasa."','".$pacienteId."','1');";
         $conexao->query($sql);
-        
-    }
-        
-        
-    // $sql1 = "UPDATE endereco set logradouro = '".$logradouro."', bairro = '".$bairro."', cidade = '".$cidade."', estado ='".$estado."', pais = '".$pais."', cep = '".$cep."', idtipoEndereco = '".$tipoEndereco."', numero = '".$numeroCasa."' WHERE idusuario = '".$_SESSION['idusuario']."';";
-    //     echo '<script>console.log("idUsuario not null")</script>';
 
-    $conexao->query($sql);
-  
-    
+        echo '<br><br><center><a href="/prontuarioDigital/principal/principal.php"><h1 class="w3-button w3-teal">Inclusão realizada com Sucesso</h1></a></center>';
+        
+        
+    }else{
 
-    
-
-    if($conexao->query($sql) === TRUE){
-            
-        echo '<br><br><center><a href="/prontuarioDigital/principal/principal.php"><h1 class="w3-button w3-teal">Atualização realizada com Sucesso</h1></a></center>';
-        }else{
         echo '<br><br><center><a href="/prontuarioDigital/principal/usuario/dadosPessoais.php"><h1>class="w3-button w3-teal">Houve erro</h1></a></center>';
+
     }
+        
+        
+
     $conexao->close();
 
 ?>
