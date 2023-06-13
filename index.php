@@ -1,8 +1,22 @@
     <?php require_once ('cabecalho.php'); /*Faz a chamada da estrutura padronizada de Cabeçalho*/ ?> 
     <title>Login</title>
 </head>
-<body>
+<!--31/05/2023 CRIADO O ESTILO para inserir a cor de fundo-->
+<style>
+    .box {
+    width: 400px;
+    height: 400px;
+    border: 2px  #68a797;
+    margin: 10px;
+    color: white;
+  }
+  .linearGradientHorizontal {
+    background-image: linear-gradient(90deg, #68a797, #67a8cd);
+  }
+</style>
 
+
+<body class="box linearGradientHorizontal">
     <div class="w3-container w3-round-xxlarge w3-display-middle w3-card-4 w3-third">
     
     <form class="w3-container " action="loginAction.php" method="post"> <!--Passa as informações de Usuário e Senha para validação-->

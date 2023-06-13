@@ -17,6 +17,7 @@ $sqlPaciente = "SELECT * FROM paciente;";
             <table class="w3-table-all w3-centered w3-text-black">
                 <thead>
                     <tr class="w3-center w3-indigo">
+                    
                         <th>ID Paciente</th>
                         <th>Nome</th>                        
                         <th>CPF</th>

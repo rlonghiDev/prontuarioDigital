@@ -144,12 +144,12 @@ CREATE TABLE `evolucao` (
   `idevolucao` int NOT NULL AUTO_INCREMENT,
   `dataConsulta` varchar(12) DEFAULT NULL,
   `estadoPaciente` varchar(100) DEFAULT NULL,
-  `recomendacao` varchar(100) DEFAULT NULL,
-  `proximaConsulta` varchar(45) DEFAULT NULL,
+  `notamedica` varchar(600) DEFAULT NULL,
+  `prescricao` varchar(600) DEFAULT NULL,
   `idpaciente` int NOT NULL,
   PRIMARY KEY (`idevolucao`),
   KEY `fk_evolucao_paciente1_idx` (`idpaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,6 +158,7 @@ CREATE TABLE `evolucao` (
 
 LOCK TABLES `evolucao` WRITE;
 /*!40000 ALTER TABLE `evolucao` DISABLE KEYS */;
+INSERT INTO `evolucao` VALUES (1,'03/06/2023',NULL,'Teste nota Médica ','Toma um remédio',12),(2,'03/06/2023',NULL,'Teste de inserção de anotação no prontuário','Aspirina 1x ao dia \r\nAAS infantil - 2x ao dia ',2),(3,'03/06/2023',NULL,'Outra nota médica 16:22','Mais um remédio - 16:22',2),(4,'03/06/2023',NULL,'16:27','16:27',2);
 /*!40000 ALTER TABLE `evolucao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -243,34 +244,6 @@ LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
 INSERT INTO `paciente` VALUES (1,'Paciente01',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'null',NULL),(2,'Paciente teste','2023-05-19','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(3,'Paciente teste','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(4,'Paciente teste','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(5,'Paciente teste','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(6,'Paciente teste','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(7,'Paciente teste','2023-05-26','Feminino','Feminino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(8,'Paciente teste','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(9,'Paciente teste','2023-05-26','Feminino','Feminino','Nome do Pai','Nome da Mãe','Belo Horizonte','Convênio','111.222.333-44','null',NULL),(10,'Paciente 10','2023-05-26','Masculino','Masculino','Nome do Papa','Nome da Mama','Porto Alegre','Convênio Médico','111.222.333-99','email@teste10','11999998882'),(11,'Paciente 11','2023-05-26','Masculino','Masculino','Nome do Pai','Nome da Mãe','Jundiaí','Convênio M2','111.222.333-22','email@11','31-3333-4443'),(12,'Paciente teste 12','2023-05-23','Masculino','Outros','Nome do Papa2','Nome da Mama2','Campinas / SP','Convênio M','111.222.333-55','email@teste12','11999998223');
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `prescricao`
---
-
-DROP TABLE IF EXISTS `prescricao`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `prescricao` (
-  `idprescricao` int NOT NULL AUTO_INCREMENT,
-  `medicamento` varchar(60) DEFAULT NULL,
-  `fisioterapia` varchar(60) DEFAULT NULL,
-  `evitar` varchar(100) DEFAULT NULL,
-  `recomendado` varchar(45) DEFAULT NULL,
-  `idpaciente` int NOT NULL,
-  PRIMARY KEY (`idprescricao`),
-  KEY `fk_prescricao_paciente1_idx` (`idpaciente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `prescricao`
---
-
-LOCK TABLES `prescricao` WRITE;
-/*!40000 ALTER TABLE `prescricao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `prescricao` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -467,4 +440,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-06-02 14:10:52
+-- Dump completed on 2023-06-03 16:40:08
